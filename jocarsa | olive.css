@@ -1,0 +1,55 @@
+/* Container for the custom code editor */
+.jocarsa-olive-container {
+  position: relative;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  display: flex;
+  overflow: hidden;
+  height: 300px; /* adjust as needed */
+}
+
+/* Left gutter for line numbers */
+.jocarsa-olive-line-numbers {
+  background: #f0f0f0;
+  color: #999;
+  text-align: right;
+  padding: 5px 10px;
+  user-select: none;
+  overflow: hidden;
+  /* Fix the gutter width */
+  width: 40px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 3;
+}
+
+/* Each line number */
+.jocarsa-olive-line-numbers .line-number {
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+/* Highlight for the active line number */
+.jocarsa-olive-line-numbers .line-number.active {
+  background: #ddd;
+}
+
+/* The editable code area */
+.jocarsa-olive-editor {
+  flex: 1;
+  padding: 5px 10px;
+  outline: none;
+  overflow: auto;
+  white-space: pre;
+  position: relative; /* create a positioning context */
+  z-index: 2;
+}
+
+/* The current line background highlight in the editor */
+.jocarsa-olive-current-line-highlight {
+  position: absolute;
+  background: rgba(211, 211, 211, 0.5); /* light gray tone */
+  pointer-events: none;
+  z-index: 1;
+}
+
